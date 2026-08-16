@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  --font-display: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+
+  --color-bg: #0b0c0d;
+  --color-surface: #131516;
+  --color-elevated: #1a1d1f;
+  --color-inset: #0e1011;
+  --color-fg: #ebe6de;
+  --color-muted: #8e8982;
+  --color-subtle: #5c5954;
+  --color-border: #2a2c2e;
+  --color-border-strong: #3a3d40;
+  --color-accent: #ebe6de;
+  --color-accent-fg: #0b0c0d;
+  --color-danger: #c45c4a;
+  --color-danger-soft: #3a221e;
+  --color-warn: #c4a06a;
+  --color-warn-soft: #33291a;
+  --color-ok: #6d9174;
+  --color-ok-soft: #1c2820;
+  --color-info: #7d919c;
+  --color-info-soft: #1a2226;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+
+  --shadow-border: 0 0 0 1px rgba(235, 230, 222, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(235, 230, 222, 0.14);
+  --shadow-lift: 0 18px 40px -24px rgba(0, 0, 0, 0.65);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-fg);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-fg) 22%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 400ms var(--ease-out) both;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
