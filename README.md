@@ -1,37 +1,44 @@
-# S.Aegis
+# Aegis · NivaPay — Open Source Fintech Security Ops Desk
 
-**Simple name:** Aegis
+**Aegis** is an open-source **security operations desk** for a payments app (NivaPay demo). Incidents, tickets, sources, evals, and a human queue — so a payments SOC can see crash spikes and SCA findings in one place.
 
-Security ops desk for a payments app (demo).
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)
 
-This is a Grok App Builder project. The sandbox npm name was `app-builder-workspace`. On GitHub it is **S.Aegis** (private).
+## Features
 
-## Run on this Mac
+- Incident queue with severity (P0+)
+- Tickets, inbox, audit, and evals
+- Source connectors (demo)
+- Role-based desk
+- Agent assist with human accept / reject
 
-Need **Node.js 22** and **npm**. Postgres is not required (uses PGLite in the browser/process).
+> Demo data only. Not a production SOC and not affiliated with a live payments brand.
+
+## Who it is for
+
+- Fintech / payments security teams prototyping a **SOC UI**
+- AppSec folks teaching **incident → ticket** flow
+- Developers pairing this with Conduit / MCP
+
+## Quick start
 
 ```bash
-cd "/Users/akshitpareta/Documents/S-projects/S.Aegis"
+git clone https://github.com/Akshit1018/S.Aegis.git
+cd S.Aegis
 npm install
-npm run dev
-```
-
-Open http://127.0.0.1:8080
-
-To skip Grok login in local preview:
-
-```bash
 VITE_AUTH_ENABLED=false npm run dev
 ```
 
-Optional AI (only if this app calls Grok): set `XAI_API_KEY`.
+Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
-## Scripts
+## Tech stack
 
-- `npm run dev` — Vite on port 8080
-- `npm run build` — production build + DB migrate (skipped without DATABASE_URL)
-- `npm run typecheck`
+React 19 · TanStack Start · Vite · Tailwind · Zustand · Recharts
 
-## Notes
+## License
 
-Do not commit `.env`, `node_modules`, or `.grok/`.
+[MIT](LICENSE)
+
+## Keywords
+
+security operations desk, fintech SOC, payments incident queue, SCA findings UI, open source SecOps dashboard, appsec evals
